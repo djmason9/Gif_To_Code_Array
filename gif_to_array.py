@@ -1,7 +1,7 @@
 from PIL import Image
 
 # Open the GIF image
-gif_image = Image.open('jmww.gif')
+gif_image = Image.open('[YOUR_GIF _ATH_HERE]')
 
 # Convert the image to RGB mode
 if gif_image.mode != 'RGB':
@@ -9,7 +9,7 @@ if gif_image.mode != 'RGB':
 
 
 # Get the dimensions of the resized frame (320x170)
-frame_width, frame_height = 320, 170
+frame_width, frame_height = [YOUR_WIDTH], [YOUR_HEIGHT]
 
 # Calculate the size of each frame's data array
 frame_size = frame_width * frame_height
@@ -39,7 +39,7 @@ except EOFError:
     pass
 
 # Save the array to a file named "output_array.txt"
-output_filename = "output_array.txt"
+output_filename = "[YOUR_FILE_NAME_HERE]"
 
 with open(output_filename, "w") as output_file:
     output_file.write(f"#define PROGMEM\n\nint framesNumber = {len(frames_data)}; int aniWidth = {frame_width}; int aniHeight = {frame_height};\n\n")
