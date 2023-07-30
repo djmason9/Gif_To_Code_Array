@@ -1,7 +1,7 @@
 from PIL import Image
 
 # Open the GIF image
-gif_image = Image.open('[YOUR_GIF _ATH_HERE]')
+gif_image = Image.open('[YOUR_GIF_PATH_HERE]')
 
 # Convert the image to RGB mode
 if gif_image.mode != 'RGB':
