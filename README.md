@@ -1,5 +1,7 @@
-# Gif To Code Array or Aruduino
-![LillyGo Display](./IMG_1684.png)
+# Gif To Code Array for Aruduino
+
+<img src="./IMG_1684.png" alt="Cat Image" width="300">
+
 
 This will take an animated Gif and convert it to a const unsigned short Array. This can be used to display animated gifs on a Arduino or Lillygo LCD screen
 # TO USE
