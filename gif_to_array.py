@@ -1,12 +1,6 @@
 from PIL import Image
 
-# Open the GIF image
-gif_image = Image.open('[YOUR_GIF_PATH_HERE]')
-
-# Convert the image to RGB mode
-if gif_image.mode != 'RGB':
-    gif_image = gif_image.convert('RGB')
-
+imageObject = Image.open("[YOUR_GIF_PATH_HERE]")
 
 # Get the dimensions of the resized frame (320x170)
 frame_width, frame_height = [YOUR_WIDTH], [YOUR_HEIGHT]
@@ -14,29 +8,16 @@ frame_width, frame_height = [YOUR_WIDTH], [YOUR_HEIGHT]
 # Calculate the size of each frame's data array
 frame_size = frame_width * frame_height
 
-# Initialize the list to store the frames
+print(imageObject.is_animated)
+print(imageObject.n_frames)
 frames_data = []
+# Display individual frames from the loaded animated GIF file
+for frame in range(0, imageObject.n_frames):
+    imageObject.seek(frame)
+    rgb_pixels = list(imageObject.convert("RGB").getdata())
 
-# Loop through each frame in the GIF
-try:
-    while True:
-        # Resize the frame to the desired resolution (320x170)
-        resized_frame = gif_image.resize((frame_width, frame_height), Image.BICUBIC)  # or Image.BICUBIC
-
-        # Convert the pixels to a list of RGB tuples
-        rgb_pixels = resized_frame.getdata()
-
-        # Convert the RGB pixels to a list of unsigned short values
-        frame_data = [((r >> 3) << 11) | ((g >> 2) << 5) | (b >> 3) for r, g, b in rgb_pixels]
-        # Append the frame data to the list
-        frames_data.append(frame_data)
-
-        # Move to the next frame
-        gif_image.seek(len(frames_data))
-
-except EOFError:
-    print(f"Error")
-    pass
+    frame_data = [((r >> 3) << 11) | ((g >> 2) << 5) | (b >> 3) for r, g, b in rgb_pixels]
+    frames_data.append(frame_data)
 
 # Save the array to a file named "output_array.txt"
 output_filename = "[YOUR_FILE_NAME_HERE]"
