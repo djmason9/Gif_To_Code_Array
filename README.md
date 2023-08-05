@@ -1,4 +1,4 @@
-# Gif To Code Array for Aruduino
+# Gif To Code Array for Arduino
 
 <img src="./IMG_1684.png" alt="Cat Image" width="300">
 
