@@ -1,4 +1,6 @@
 # Gif_To_Code_Array
+![LillyGo Display](./IMG_1684.png)
+
 This will take an animated Gif and convert it to a const unsigned short Array. This can be used to display animated gifs on a Arduino or Lillygo LCD screen
 # TO USE
 
@@ -28,3 +30,5 @@ Run it.
 ```js
 python gif_to_array.py
 ```
+
+![JMWW NFT](./jmww.gif)
